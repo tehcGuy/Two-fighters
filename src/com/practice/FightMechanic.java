@@ -28,12 +28,12 @@ if ((b.health -= a.damagePerAttack) <= 0) return a.name;  // a wins
 public class FightMechanic {
     public static String declareWinner(Fighter fighter1, Fighter fighter2, String firstAttacker) {
         Fighter a, b;
-        a = fighter1;
         b = fighter2;
+        a = fighter1;
 
         if(fighter1.name.contains(firstAttacker)) {
-            a = fighter2;
             b = fighter1;
+            a = fighter2;
         }
         while(true) {
             if((a.health -= b.damagePerAttack) <= 0) return b.name;
